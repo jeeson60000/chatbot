@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -102,7 +101,7 @@ def generate_chart():
 
 if __name__ == '__main__':
     app.run(debug=True)
-=======
+    
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -205,5 +204,6 @@ def generate_chart():
         return jsonify({'response': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True)
->>>>>>> 28c429086b0dbad715fbefb4fd870fd1f9baacdc
+    port = int(os.environ.get("port", 10000))
+    app.run(host="0.0.0.0", port=port)
+    
